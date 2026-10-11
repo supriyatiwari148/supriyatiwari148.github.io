@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Supriya Tiwari | Full-Stack Developer</title>
+<meta name="description" content="Portfolio of Supriya Tiwari, Computer Engineering student and full-stack developer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F5F4FB; --surface:#FFFFFF; --ink:#1D1A3B; --muted:#5E5B7D;
+  --line:#DAD7EE; --accent:#5236E8; --accent-ink:#FFFFFF; --mint:#0E9F85;
+  --head:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#12111F; --surface:#1B1A2E; --ink:#EDEBFA; --muted:#A19EC4;
+    --line:#2F2D4A; --accent:#8F7BFF; --accent-ink:#12111F; --mint:#4FD6B8;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#12111F; --surface:#1B1A2E; --ink:#EDEBFA; --muted:#A19EC4;
+  --line:#2F2D4A; --accent:#8F7BFF; --accent-ink:#12111F; --mint:#4FD6B8;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.65;font-size:17px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-family:var(--head);font-weight:800;text-decoration:none;font-size:1.15rem}
+nav{display:flex;gap:22px;align-items:center}
+nav a{text-decoration:none;color:var(--muted);font-size:.95rem}
+nav a:hover{color:var(--ink)}
+#theme{background:none;border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:6px 10px;cursor:pointer;font:inherit;font-size:.85rem}
+
+section{padding:88px 0}
+h2{font-family:var(--head);font-size:clamp(1.8rem,4vw,2.4rem);font-weight:700;margin-bottom:12px;letter-spacing:-.01em}
+.lead{color:var(--muted);max-width:60ch;margin-bottom:36px}
+
+/* Hero */
+.hero{padding:72px 0 64px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+h1{font-family:var(--head);font-weight:800;font-size:clamp(2.6rem,7vw,4.6rem);line-height:1.02;letter-spacing:-.03em}
+.role{margin:20px 0 28px;font-size:1.15rem;color:var(--muted);max-width:46ch}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;text-decoration:none;padding:12px 22px;border-radius:10px;font-weight:500;border:1.5px solid var(--ink)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:hover{transform:translateY(-2px)}
+.btn{transition:transform .15s}
+
+.editor{background:#171530;color:#E6E3FF;border-radius:14px;overflow:hidden;font-family:var(--mono);font-size:.88rem;box-shadow:0 18px 40px -18px rgba(40,25,120,.55)}
+.editor .bar{display:flex;gap:7px;padding:12px 14px;background:#221F45}
+.editor .bar i{width:11px;height:11px;border-radius:50%;background:#5B5792}
+.editor .bar span{margin-left:auto;color:#9A96CC;font-size:.78rem}
+.editor pre{padding:20px 20px 24px;overflow-x:auto;line-height:1.75}
+.k{color:#A99BFF}.s{color:#6EE7C8}.c{color:#7F7BB0}
+.cursor{display:inline-block;width:8px;height:1.05em;background:#6EE7C8;vertical-align:text-bottom;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+
+/* Skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.group{border-left:3px solid var(--accent);padding:4px 0 4px 18px}
+.group h3{font-family:var(--head);font-size:1.05rem;margin-bottom:10px}
+.group ul{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.group li{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px 14px;font-size:.92rem}
+
+/* Projects */
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:26px;display:flex;flex-direction:column}
+.card h3{font-family:var(--head);font-size:1.3rem;margin-bottom:8px}
+.card p{color:var(--muted);margin-bottom:16px;flex:1}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+.tags span{font-family:var(--mono);font-size:.78rem;color:var(--accent);background:color-mix(in srgb,var(--accent) 11%,transparent);padding:3px 9px;border-radius:6px}
+.links{display:flex;gap:18px;font-weight:500;font-size:.95rem}
+.links a{color:var(--accent)}
+
+/* About / Education */
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:48px}
+.edu{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px;align-self:start}
+.edu h3{font-family:var(--head);margin-bottom:6px}
+.edu p{color:var(--muted);font-size:.95rem}
+
+/* Contact */
+.contact{text-align:left}
+.contact .big{font-family:var(--head);font-weight:700;font-size:clamp(1.5rem,4vw,2.2rem);word-break:break-word}
+.social{display:flex;flex-wrap:wrap;gap:14px;margin-top:24px}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.9rem}
+
+@media (max-width:820px){
+  .hero .wrap,.about{grid-template-columns:1fr}
+  nav a:not(#theme){display:none}
+  section{padding:64px 0}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}.cursor{animation:none}.btn{transition:none}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top">Supriya Tiwari</a>
+    <nav aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <button id="theme" type="button" aria-label="Toggle dark and light theme">Theme</button>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Supriya Tiwari</h1>
+        <p class="role">Computer Engineering student who builds full-stack web apps with React, Node and Python. Looking for a software development role.</p>
+        <div class="btns">
+          <a class="btn primary" href="#projects">View projects</a>
+          <a class="btn" href="resume.pdf">Download resume</a>
+        </div>
+      </div>
+      <div class="editor" aria-hidden="true">
+        <div class="bar"><i></i><i></i><i></i><span>supriya.js</span></div>
+<pre><span class="k">const</span> supriya = {
+  role: <span class="s">"Full-stack developer"</span>,
+  languages: [<span class="s">"Python"</span>, <span class="s">"Java"</span>, <span class="s">"JavaScript"</span>],
+  frontend: [<span class="s">"React"</span>, <span class="s">"Tailwind CSS"</span>],
+  backend: [<span class="s">"Node"</span>, <span class="s">"Express"</span>],
+  databases: [<span class="s">"MySQL"</span>, <span class="s">"MongoDB"</span>],
+  openToWork: <span class="k">true</span>,
+};<span class="cursor"></span></pre>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap about">
+      <div>
+        <h2>About</h2>
+        <!-- TODO: replace with your own 3-4 lines -->
+        <p class="lead" style="margin-bottom:16px">I'm a Computer Engineering student who likes turning ideas into working software. I build web apps end to end, from the React interface to the Express API and the database behind it.</p>
+        <p class="lead">I'm looking for a software development role where I can keep building, learn from a team, and ship things people use.</p>
+      </div>
+      <div class="edu">
+        <h3>Education</h3>
+        <!-- TODO: add your college, degree and graduation year -->
+        <p>B.E. / B.Tech in Computer Engineering<br>Your College Name<br>Expected graduation: 20XX</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <h2>Skills</h2>
+      <p class="lead">The tools I use to build and ship projects.</p>
+      <div class="skills">
+        <div class="group"><h3>Languages</h3><ul><li>Python</li><li>Java</li><li>JavaScript</li></ul></div>
+        <div class="group"><h3>Frontend</h3><ul><li>HTML</li><li>CSS</li><li>React</li><li>Tailwind CSS</li></ul></div>
+        <div class="group"><h3>Backend</h3><ul><li>Node</li><li>Express</li></ul></div>
+        <div class="group"><h3>Databases</h3><ul><li>MySQL</li><li>MongoDB</li></ul></div>
+        <div class="group"><h3>Tools</h3><ul><li>Git</li><li>GitHub</li><li>Postman</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <h2>Projects</h2>
+      <p class="lead">A few things I've built. Each links to its code.</p>
+      <div class="projects">
+
+        <article class="card">
+          <h3>AI Resume Analyser</h3>
+          <p>An AI-powered tool that analyses a resume and gives feedback to help it get past screening.</p>
+          <!-- TODO: add the tech you used, e.g. <div class="tags"><span>Python</span><span>React</span></div> -->
+          <div class="links"><a href="#">GitHub</a><a href="#">Live demo</a></div>
+        </article>
+
+        <article class="card">
+          <h3>Personal Productivity Dashboard</h3>
+          <p>A full-stack dashboard for managing tasks and daily progress, with secure sign-in and per-user data.</p>
+          <div class="tags"><span>React</span><span>Vite</span><span>Tailwind CSS</span><span>Express</span><span>MongoDB</span><span>JWT</span></div>
+          <div class="links"><a href="#">GitHub</a><a href="#">Live demo</a></div>
+        </article>
+
+        <article class="card">
+          <h3>AI Voice Assistant</h3>
+          <p>A ChatGPT-style chatbot you can talk to. It runs a local language model, so it works offline with no paid API.</p>
+          <div class="tags"><span>Python</span><span>Flask</span><span>Ollama</span><span>Web Speech API</span></div>
+          <div class="links"><a href="#">GitHub</a><a href="#">Demo video</a></div>
+        </article>
+
+        <article class="card">
+          <h3>Twitter Clone</h3>
+          <p>A social feed app modelled on Twitter/X, with a separate frontend and backend.</p>
+          <div class="tags"><span>JavaScript</span><span>Node</span><span>Express</span></div>
+          <div class="links"><a href="#">GitHub</a><a href="#">Live demo</a></div>
+        </article>
+
+        <article class="card">
+          <h3>StudySync</h3>
+          <p>A student timetable and reminder system that keeps classes, deadlines and study sessions in one place.</p>
+          <div class="tags"><span>Java</span></div>
+          <div class="links"><a href="#">GitHub</a><a href="#">Report</a></div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <p class="lead">Open to internships and full-time software development roles. The fastest way to reach me is email.</p>
+      <!-- TODO: replace with your email and profile links -->
+      <a class="big" href="mailto:mesupriya.tiwari@gmail.com">mesupriya.tiwari@gmail.com</a>
+      <div class="social">
+        <a class="btn" href="https://github.com/supriyatiwari148">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/supriya-tiwari02">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© <span id="yr"></span> Supriya Tiwari</div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+(function(){
+  var root = document.documentElement, btn = document.getElementById('theme');
+  try { var saved = localStorage.getItem('theme'); if (saved) root.setAttribute('data-theme', saved); } catch(e){}
+  btn.addEventListener('click', function(){
+    var dark = root.getAttribute('data-theme') === 'dark' ||
+      (!root.getAttribute('data-theme') && matchMedia('(prefers-color-scheme: dark)').matches);
+    var next = dark ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
